@@ -6,7 +6,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([])
     const [display, setDisplay] = useState([])
     useEffect(() => {
-        fetch('./products.JSON')
+        fetch('https://raw.githubusercontent.com/Abu-yousuf1/ema-jhon-simple/main/public/products.json')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)

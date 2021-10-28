@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Daily Home Care",
+        "image": " https://i.ibb.co/hRQHqZz/national-cancer-institute-g-O-i-ULv-qb-U-unsplash.jpg",
+        "description": "We send a doctor to visit the patient at home to diagnose and treat..."
+    },
+    {
+        "id": 2,
+        "name": "Hourly Home Care",
+        "image": "https://i.ibb.co/VQ6wWDj/cdc-l-Nk-Rn-ZPfiw-Y-unsplash.jpg",
+        "description": "The most common form of home health care, which depends on the individual..."
+    },
+    {
+        "id": 3,
+        "name": "Specialized Care",
+        "image": "https://i.ibb.co/HGfrBsq/cdc-TDo-Pe-USOD1c-unsplash.jpg",
+        "description": "Physical,mental, Occupational therapy provides patients with help on ...."
+    },
+    {
+        "id": 4,
+        "name": "Advanced Care",
+        "image": "https://i.ibb.co/W0bFNGj/national-cancer-institute-6-Fab-Kij-Vw-AU-unsplash.jpg",
+        "description": "Medical social workers provide various services to the patient, including..."
+    },
+    {
+        "id": 5,
+        "name": "Hospital to Home Care",
+        "image": "https://i.ibb.co/PZkKnwJ/national-cancer-institute-DK-4-VWK1tw-unsplash.jpg",
+        "description": "Help the patient with his or her basic personal needs such as getting out ..."
+    },
+    {
+        "id": 6,
+        "name": "Respite Home Care",
+        "image": " https://i.ibb.co/XWjYC8P/zach-vessels-Wx-Rd7by-Fxs4-unsplash.jpg",
+        "description": "While a patient is being medically cared for in the home, a home maker or ..."
+    }
+]
