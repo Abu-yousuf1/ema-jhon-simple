@@ -13,6 +13,7 @@ import Register from './components/Register/Register';
 import AuthProvider from './contextApi/AuthProvider';
 import PrivateRouter from './components/PrivateRouter/PrivateRouter';
 import Shipping from './components/Shipping/Shipping';
+import Order from './components/Order/Order';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           </PrivateRouter>
           <PrivateRouter path="/shipping">
             <Shipping />
+          </PrivateRouter>
+          <PrivateRouter path="/order">
+            <Order />
           </PrivateRouter>
           <Route path="/login">
             <Login />

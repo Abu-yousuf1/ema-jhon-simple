@@ -19,3 +19,17 @@
     margin: 20px;
     padding: 10px;
 }
+
+.pagination {
+    margin: 30px;
+}
+
+.pagination button {
+    margin-left: 20px;
+    padding: 0 20px;
+}
+
+.pagination .active {
+    background-color: rgb(37, 37, 250);
+    color: white;
+}

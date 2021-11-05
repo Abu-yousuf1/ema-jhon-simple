@@ -9,35 +9,41 @@ import "./Shop.css"
 
 const Shop = () => {
     const [products, setProducts] = useState([])
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useCart()
     const [display, setDisplay] = useState([])
+    const [page, setPage] = useState(0)
+    const [pageCount, setPageCount] = useState(0)
+    const size = 10;
 
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Abu-yousuf1/ema-jhon-simple/main/public/products.json')
+        fetch(`https://pacific-shelf-22590.herokuapp.com/products?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
-                setProducts(data)
-                setDisplay(data)
+                setProducts(data.products)
+                setDisplay(data.products)
+                const count = data.count;
+                const pageNumber = Math.ceil(count / size)
+                setPageCount(pageNumber)
             })
-    }, [])
+    }, [page])
 
 
 
-    useEffect(() => {
-        const saveCart = getStoredCart();
-        if (products.length) {
-            const storedCard = []
-            for (const key in saveCart) {
-                const addedProduct = products.find(pd => pd.key === key)
-                if (addedProduct) {
-                    const quantity = saveCart[key];
-                    addedProduct.quantity = quantity;
-                    storedCard.push(addedProduct)
-                }
-            }
-            setCart(storedCard)
-        }
-    }, [products])
+    // useEffect(() => {
+    //     const saveCart = getStoredCart();
+    //     if (products.length) {
+    //         const storedCard = []
+    //         for (const key in saveCart) {
+    //             const addedProduct = products.find(pd => pd.key === key)
+    //             if (addedProduct) {
+    //                 const quantity = saveCart[key];
+    //                 addedProduct.quantity = quantity;
+    //                 storedCard.push(addedProduct)
+    //             }
+    //         }
+    //         setCart(storedCard)
+    //     }
+    // }, [products])
 
 
     const handleCart = (product) => {
@@ -81,6 +87,17 @@ const Shop = () => {
                             handleCart={handleCart}
                         />)
                     }
+
+                    <div className="pagination">
+                        {
+                            [...Array(pageCount).keys()].map(number => <button
+                                key={number}
+
+                                onClick={() => setPage(number)}
+                                className={number === page ? "active" : ""}
+                            >{number + 1}</button>)
+                        }
+                    </div>
                 </div>
 
                 <div>

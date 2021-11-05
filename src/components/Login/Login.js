@@ -4,7 +4,7 @@ import useAuth from '../../hook/useAuth';
 import "./Login.css"
 
 const Login = () => {
-    const { googleSignIn } = useAuth();
+    const { googleSignIn, setIsLoading } = useAuth();
     const location = useLocation();
     console.log(location.state?.from)
     const redirect_uri = location.state?.from || "/home";
@@ -15,6 +15,7 @@ const Login = () => {
             .then((result) => {
                 history.push(redirect_uri)
             })
+            .finally(() => setIsLoading(false))
     }
     return (
         <div className="login-form">
